@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tree.indent": 16,
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#00ff00"
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "python.languageServer": "Microsoft",
+}
