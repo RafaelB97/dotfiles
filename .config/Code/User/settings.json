@@ -1,8 +1,10 @@
 {
     "workbench.colorTheme": "Dracula",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": 0,
+    "editor.fontFamily": "'FiraCode Nerd Font'",
+    "editor.fontLigatures": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue", "window.zoomLevel": 0,
+    "editor.smoothScrolling": true,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.indent": 16,
     "workbench.colorCustomizations": {
@@ -16,5 +18,48 @@
         "editor.insertSpaces": true,
         "editor.detectIndentation": false
     },
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
     "python.languageServer": "Microsoft",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { 
+            "before": ["u"], 
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo", 
+                }
+            ] 
+        }, 
+        { 
+            "before": ["<C-r>"], 
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo", 
+                }
+            ] 
+        },
+        {
+            "before": ["tab"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.nextEditorInGroup", 
+                }
+            ] 
+        },
+        {
+            "before": ["shift+tab"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditorInGroup", 
+                }
+            ] 
+        }
+    ],
 }

@@ -68,12 +68,16 @@ endif
 
 
 
+" NERDTree settings
+let NERDTreeQuitOnOpen=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+
 nnoremap <C-j> :bprev<CR>
 nnoremap <C-k> :bnext<CR>
 
