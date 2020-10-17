@@ -121,11 +121,11 @@ bindsym $mod+1 workspace $main
 bindsym $mod+2 workspace $work
 bindsym $mod+3 workspace $spotify
 bindsym $mod+4 workspace $social
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+5 workspace "5  "
+bindsym $mod+6 workspace "6  "
+bindsym $mod+7 workspace "7  "
+bindsym $mod+8 workspace "8  "
+bindsym $mod+9 workspace "9  "
 bindsym $mod+0 workspace $monitor
 
 # move focused container to workspace
@@ -133,11 +133,11 @@ bindsym $mod+Shift+1 move container to workspace $main
 bindsym $mod+Shift+2 move container to workspace $work
 bindsym $mod+Shift+3 move container to workspace $spotify
 bindsym $mod+Shift+4 move container to workspace $social
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+5 move container to workspace "5  "
+bindsym $mod+Shift+6 move container to workspace "6  "
+bindsym $mod+Shift+7 move container to workspace "7  "
+bindsym $mod+Shift+8 move container to workspace "8  "
+bindsym $mod+Shift+9 move container to workspace "9  "
 bindsym $mod+Shift+0 move container to workspace $monitor
 
 # reload the configuration file
@@ -227,11 +227,21 @@ bindsym $mod+p mode "system"
 # Execute
 #######################################################
 
+# Set the works space 10 in the second monitor
+exec --no-startup-id i3-msg 'workspace 2  ; workspace 10  ; workspace 1  '
+
 # set wallpaper
 # exec_always feh --bg-scale /home/rafael/Pictures/Wallpapers/GreenDevice.png
+exec --no-startup-id nitrogen --restore
 
 # connect the second monitor 
 exec_always xrandr --output HDMI-1 --auto --right-of eDP-1
+
+# Suspend when 20 minutes
+exec --no-startup-id xautolock -time 20 -locker "i3exit suspend"
+
+# Tab as default on workspace
+workspace_layout tabbed
 
 #######################################################
 # Bar

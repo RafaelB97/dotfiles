@@ -116,31 +116,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #######################################################
-# General alias
-#######################################################
-alias lx="ls -l -X"
-alias lxa="ls -la -X"
-alias python=python3
-alias count="ls -F |grep -v / | wc -l"
-alias :q="exit"
-alias open="xdg-open"
-
-# Git alias
-alias gs="git status -s -b"
-alias gl="git log --oneline --decorate --all --graph"
-
-alias sc="gnome-screenshot -i"
-
-# Git alias to manage dot files
-alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
-# Practicas shortcuts
-alias practicas="~/Desktop/Practicas"
-alias api="~/Desktop/Practicas/api"
-alias nubixos="~/Desktop/Practicas/nubix-upload"
-
-alias notes="nvim ~/Desktop/notes.md"
-#######################################################
 # General configuration
 #######################################################
 source /etc/zsh_command_not_found  
