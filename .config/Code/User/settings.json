@@ -10,6 +10,7 @@
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#00ff00"
     },
+    "editor.renderWhitespace": "all",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.languageServer": "Microsoft",
@@ -61,4 +62,5 @@
             ] 
         }
     ],
+    "workbench.startupEditor": "newUntitledFile",
 }

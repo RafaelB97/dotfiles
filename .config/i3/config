@@ -240,6 +240,9 @@ exec_always xrandr --output HDMI-1 --auto --right-of eDP-1
 # Suspend when 20 minutes
 exec --no-startup-id xautolock -time 20 -locker "i3exit suspend"
 
+# Change control with caps
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
+
 # Tab as default on workspace
 workspace_layout tabbed
 
