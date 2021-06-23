@@ -15,6 +15,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/rainbow_parentheses.vim'
     " Startify
     Plug 'mhinz/vim-startify'
+    " DevIcons
+    Plug 'ryanoasis/vim-devicons'
+    " Fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    " Table Mode
+    Plug 'dhruvasagar/vim-table-mode'
 
     " Themes
     " One Dark Theme
@@ -22,3 +29,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+

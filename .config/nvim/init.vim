@@ -8,6 +8,7 @@ source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/nerdtree.vim
 source $HOME/.config/nvim/plugins/rainbow.vim
 source $HOME/.config/nvim/plugins/startify_config.vim
+source $HOME/.config/nvim/plugins/fzf.vim
 luafile $HOME/.config/nvim/plugins/colorizer.lua
 
 " Themes
