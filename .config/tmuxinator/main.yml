@@ -1,0 +1,7 @@
+# /home/rafael/.config/tmuxinator/main.yml
+
+name: main
+root: ~/
+
+windows:
+  - null: neofetch

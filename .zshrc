@@ -79,6 +79,7 @@ ZSH_THEME="agnoster"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -126,26 +127,11 @@ bindkey -v
 # Vim lightline fix
 export TERM=xterm-256color
 
-
-# Start with tmux
+# Start with tmux & tmuxinator
 # if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 #     tmux attach -t default || tmux new -s default 
 # fi
-
-# Neofetch
-# neofetch
-
-rmi(){
-    a="$(pwd)"
-    # echo $a
-    echo java -Djava.rmi.server.codebase=file:$a $1
-    java -Djava.rmi.server.codebase=file:$a $1 $2
-}
-
-# Tilix fix issue
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte-2.91.sh
-fi
+export EDITOR='nvim'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/rafael/.sdkman"
