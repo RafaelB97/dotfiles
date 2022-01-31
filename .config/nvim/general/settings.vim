@@ -17,7 +17,7 @@ set splitright                          " Vertical splits will automatically be 
 set t_Co=256                            " Support 256 colors
 set termguicolors
 " set conceallevel=0                      " So that I can see `` in markdown files
-set number                              " Line numbers
+set number relativenumber               " Line numbers
 set cursorline                          " Enable highlighting of the current line
 " set background=dark                     " tell vim what the background color looks like
 

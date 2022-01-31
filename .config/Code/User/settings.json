@@ -1,19 +1,18 @@
 {
-    "workbench.colorTheme": "Dracula",
     "editor.suggestSelection": "first",
     "editor.fontFamily": "'FiraCode Nerd Font'",
     "editor.fontLigatures": true,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue", "window.zoomLevel": 0,
+    "editor.cursorBlinking": "expand",
+    "editor.wordWrap": "on",
     "editor.smoothScrolling": true,
+    "editor.renderWhitespace": "all",
+    "editor.lineNumbers": "relative",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.indent": 16,
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#00ff00"
     },
-    "editor.renderWhitespace": "all",
-    "python.linting.flake8Enabled": true,
-    "python.linting.enabled": true,
-    "python.languageServer": "Microsoft",
     "[javascript]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
@@ -24,6 +23,8 @@
         "editor.insertSpaces": true,
         "editor.detectIndentation": false
     },
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         { 
             "before": ["u"], 
@@ -60,7 +61,16 @@
                     "command": "workbench.action.previousEditorInGroup", 
                 }
             ] 
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
         }
     ],
-    "workbench.startupEditor": "newUntitledFile",
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["n"],
+            "commands": ["editor.action.commentLine"]
+        }
+    ]
 }
