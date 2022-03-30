@@ -46,8 +46,8 @@ set showmode
 set showcmd
 
 " Show line numbers
-set number 
-" set number relativenumber
+" set number
+set number relativenumber
 
 " Status bar 
 set laststatus=2
@@ -100,21 +100,4 @@ inoremap (<CR> (<CR>)<Esc>ko
 
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Plug Section
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
-
-" Replaces vim's status bar
-Plug 'itchyny/lightline.vim'
-
-" NERDTree plugin
-Plug 'preservim/nerdtree'
-
-" Goyo plugin
-Plug 'junegunn/goyo.vim'
-
-" Vim Plug End
-call plug#end()
 

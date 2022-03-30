@@ -10,6 +10,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.indent": 16,
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.sideBar.location": "right",
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#00ff00"
     },
@@ -26,51 +27,47 @@
     "vim.leader": "<space>",
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
-        { 
-            "before": ["u"], 
-            "after": [],
-            "commands": [
-                {
-                    "command": "undo", 
-                }
-            ] 
-        }, 
-        { 
-            "before": ["<C-r>"], 
-            "after": [],
-            "commands": [
-                {
-                    "command": "redo", 
-                }
-            ] 
+        {
+            "before": ["u"],
+            "commands": ["undo"]
+        },
+        {
+            "before": ["<C-r>"],
+            "commands": ["redo"]
         },
         {
             "before": ["tab"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.nextEditorInGroup", 
-                }
-            ] 
+            "commands": ["workbench.action.nextEditorInGroup"]
         },
         {
             "before": ["shift+tab"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.previousEditorInGroup", 
-                }
-            ] 
+            "commands": ["workbench.action.previousEditorInGroup"]
         },
         {
             "before": ["<leader>", "b"],
             "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<leader>", "n"],
+            "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "commands": ["workbench.action.togglePanel"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["n"],
+            "before": ["<leader>", "n"],
             "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
         }
     ]
 }
