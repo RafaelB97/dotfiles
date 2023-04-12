@@ -120,6 +120,7 @@ source $ZSH/oh-my-zsh.sh
 # General configuration
 #######################################################
 source /etc/zsh_command_not_found  
+path+=("$HOME/.local/bin")
 
 # Vim mode enable
 bindkey -v

@@ -4,7 +4,7 @@ let g:mapleader = "\<Space>"
 "----General Settings----
 syntax enable                           " Enables syntax highlighing
 set hidden                              " Openning a new file when the current buffer has unsaved changes causes files to be hidden instead of closed
-set nowrap                              " Display long lines as just one line
+" set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
@@ -20,6 +20,7 @@ set termguicolors
 set number relativenumber               " Line numbers
 set cursorline                          " Enable highlighting of the current line
 " set background=dark                     " tell vim what the background color looks like
+" set nohlsearch                          " Turn off highlighting completely
 
 "----Tabs Settings----
 set tabstop=2                           " Insert 2 spaces for a tab

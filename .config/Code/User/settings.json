@@ -8,6 +8,7 @@
     "editor.renderWhitespace": "all",
     "editor.lineNumbers": "relative",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Darker",
     "workbench.tree.indent": 16,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.sideBar.location": "right",
@@ -20,6 +21,11 @@
         "editor.detectIndentation": false
     },
     "[html]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "[typescript]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
         "editor.detectIndentation": false
@@ -44,21 +50,37 @@
             "commands": ["workbench.action.previousEditorInGroup"]
         },
         {
-            "before": ["<leader>", "b"],
+            "before": ["shift+l"],
+            "commands": ["workbench.action.nextEditorInGroup"]
+        },
+        {
+            "before": ["shift+h"],
+            "commands": ["workbench.action.previousEditorInGroup"]
+        },
+        {
+            "before": ["<leader>", "e"],
             "commands": ["workbench.action.toggleSidebarVisibility"]
         },
         {
-            "before": ["<leader>", "n"],
+            "before": ["<leader>", "/"],
             "commands": ["editor.action.commentLine"]
         },
         {
             "before": ["<leader>", "j"],
             "commands": ["workbench.action.togglePanel"]
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["leader", "q"],
+            "commands": ["workbench.action.closeActiveEditor"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "n"],
+            "before": ["<leader>", "/"],
             "commands": ["editor.action.commentLine"]
         },
         {
@@ -69,5 +91,6 @@
             "before": ["<"],
             "commands": ["editor.action.outdentLines"]
         }
-    ]
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
 }
