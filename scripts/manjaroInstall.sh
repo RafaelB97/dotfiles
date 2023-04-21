@@ -28,6 +28,15 @@ runBasic() {
   fi
 }
 
+installNeovim() {
+  # Backup old config
+  mv ~/.config/nvim ~/.config/nvim.bak
+  mv ~/.local/share/nvim ~/.local/share/nvim.bak
+
+  # Install astrovim
+  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+}
+
 installRanger() {
   git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 }
@@ -64,14 +73,14 @@ runDotfiles() {
   /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no
 }
 
-runBasic
+# runBasic
 # runDotfiles
-installRanger
-runZsh
+# installRanger
+# runZsh
 
-installKitty
-installEmacs
-installi3
+# installKitty
+# installEmacs
+# installi3
 
 # # Font
 # Download from NerdFont, in this case FiraCode Font
