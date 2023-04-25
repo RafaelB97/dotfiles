@@ -44,8 +44,13 @@ installRanger() {
 runZsh() {
   ## oh-my-zsh
   chsh -s $(which zsh)
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh}/plugins/zsh-autosuggestions
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+
+  ## auto-suggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh}/plugins/zsh-autosuggestions
+
+  ## syntax-highlitghting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh}/plugins/zsh-syntax-highlighting
 }
 
 installKitty() {
@@ -53,7 +58,7 @@ installKitty() {
 }
 
 installEmacs() {
-  sudo pacman -S emacs
+  sudo pacman -S emacs ripgrep fd
   git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
   ~/.config/emacs/bin/doom install
 }
@@ -75,6 +80,7 @@ runDotfiles() {
 
 # runBasic
 # runDotfiles
+# installNeovim
 # installRanger
 # runZsh
 

@@ -30,10 +30,14 @@ runBasic() {
 }
 
 installNeovim() {
-  # Neovim 0.8
-  curl -L https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.deb > nvim-linux64.deb
-  sudo apt install ./nvim-linux64.deb
-
+  if [[ $(dpkg --print-architecture) =~ "arm64" ]]; then
+    echo "Installing neovim in raspberry pi"
+    sudo snap install nvim --classic
+  else
+    # Neovim 0.8
+    curl -L https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.deb > nvim-linux64.deb
+    sudo apt install ./nvim-linux64.deb
+  fi
 
   # VimPlug
   # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -56,7 +60,12 @@ runZsh() {
   ## oh-my-zsh
   chsh -s $(which zsh)
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+
+  ## auto-suggestions
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh}/plugins/zsh-autosuggestions
+
+  ## syntax-highlitghting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh}/plugins/zsh-syntax-highlighting
 }
 
 installKitty() {
@@ -64,6 +73,7 @@ installKitty() {
 
   # Create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in
   # your system-wide PATH)
+  mkdir -p $HOME/.local/bin
   ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
   # Place the kitty.desktop file somewhere it can be found by the OS
   cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
@@ -75,6 +85,7 @@ installKitty() {
 }
 
 installEmacs() {
+  sudo apt -y install ripgrep fd-find
   sudo add-apt-repository ppa:kelleyk/emacs
   sudo apt-get update
   sudo apt-get -y install emacs28

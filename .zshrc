@@ -86,7 +86,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,10 +128,6 @@ bindkey -v
 # Vim lightline fix
 export TERM=xterm-256color
 
-# Start with tmux & tmuxinator
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#     tmux attach -t default || tmux new -s default 
-# fi
 export EDITOR='nvim'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -141,6 +137,3 @@ export SDKMAN_DIR="/home/rafael/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
