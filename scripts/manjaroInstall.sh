@@ -78,12 +78,20 @@ runDotfiles() {
   /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no
 }
 
+installNerdfonts() {
+  git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
+  cd nerd-fonts
+  git sparse-checkout add patched-fonts/FiraCode
+  ./install.sh FiraCode
+}
+
 # runBasic
 # runDotfiles
 # installNeovim
 # installRanger
 # runZsh
 
+# installNerdfonts
 # installKitty
 # installEmacs
 # installi3
