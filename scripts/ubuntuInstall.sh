@@ -30,18 +30,9 @@ runBasic() {
 }
 
 installNeovim() {
-  if [[ $(dpkg --print-architecture) =~ "arm64" ]]; then
-    echo "Installing neovim in raspberry pi"
-    sudo snap install nvim --classic
-  else
-    # Neovim 0.8
-    curl -L https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.deb > nvim-linux64.deb
-    sudo apt install ./nvim-linux64.deb
-  fi
-
-  # VimPlug
-  # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-  #        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  sudo add-apt-repository ppa:neovim-ppa/unstable
+  sudo apt-get update
+  sudo apt-get install neovim
 
   # Backup old config
   mv ~/.config/nvim ~/.config/nvim.bak
@@ -74,7 +65,7 @@ installKitty() {
   # Create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in
   # your system-wide PATH)
   mkdir -p $HOME/.local/bin
-  ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+  ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
   # Place the kitty.desktop file somewhere it can be found by the OS
   cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
   # If you want to open text files and images in kitty via your file manager also add the kitty-open.desktop file
