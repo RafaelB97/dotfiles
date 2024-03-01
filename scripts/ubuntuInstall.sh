@@ -19,6 +19,7 @@ runBasic() {
   checkExist "git"
   checkExist "tmux"
   checkExist "ranger"
+  checkExist "stow"
 
   if [ -z "$programs" ]
   then
@@ -98,6 +99,15 @@ runDotfiles() {
   git clone --bare https://github.com/RafaelB97/dotfiles.git $HOME/.dotfiles
   /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout --force
   /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no
+}
+
+runStow() {
+  # Dotfiles
+  rm -rf .zshrc
+  git https://github.com/RafaelB97/dotfiles.git $HOME/.dotfiles
+  cd $HOME/.dotfiles
+  stow .
+  cd $HOME
 }
 
 installNerdfonts() {
