@@ -30,6 +30,11 @@ runBasic() {
   fi
 }
 
+installTmux() {
+  # Install Tmux Plugin Manager
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 installNeovim() {
   sudo add-apt-repository ppa:neovim-ppa/unstable
   sudo apt-get update
@@ -110,7 +115,7 @@ runStow() {
   rm -rf .zshrc
   git https://github.com/RafaelB97/dotfiles.git $HOME/.dotfiles
   cd $HOME/.dotfiles
-  stow .
+  stow --no-folding .
   cd $HOME
 }
 
@@ -123,6 +128,7 @@ installNerdfonts() {
 
 # runBasic
 # runDotfiles
+# installTmux
 # installNeovim
 # installZoxide
 # runRanger
