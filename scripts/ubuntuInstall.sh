@@ -47,6 +47,10 @@ runRanger() {
   git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 }
 
+installZoxide() {
+  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+}
+
 runZsh() {
   sudo apt -y install zsh
   ## oh-my-zsh
@@ -120,6 +124,7 @@ installNerdfonts() {
 # runBasic
 # runDotfiles
 # installNeovim
+# installZoxide
 # runRanger
 # runZsh
 
