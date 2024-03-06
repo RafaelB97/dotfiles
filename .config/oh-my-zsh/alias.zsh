@@ -18,6 +18,7 @@ alias sc="gnome-screenshot -i"
 
 # Git alias to manage dot files
 alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias lazydot="lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Because I always forgot the name
 alias space="ncdu"

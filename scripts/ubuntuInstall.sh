@@ -14,6 +14,15 @@ checkExist() {
   fi
 }
 
+checkRust() {
+  if ! command -v cargo
+  then
+    echo "Rust not found"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    rustup update
+  fi
+}
+
 runBasic() {
   checkExist "curl"
   checkExist "git"
@@ -37,8 +46,8 @@ installTmux() {
 
 installNeovim() {
   sudo add-apt-repository ppa:neovim-ppa/unstable
-  sudo apt-get update
-  sudo apt-get install neovim
+  sudo apt-get -y update
+  sudo apt-get -y install neovim
 
   # Backup old config
   mv ~/.config/nvim ~/.config/nvim.bak
@@ -53,8 +62,17 @@ runRanger() {
 }
 
 installZoxide() {
+  sudo apt -y install fzf
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 }
+
+installYazi() {
+  # TODO: Check if zoxide is install
+  sudo apt -y install fd-find ripgrep ffmpegthumbnailer unar jq
+  checkRust
+  cargo install --locked yazi-fm
+}
+
 
 runZsh() {
   sudo apt -y install zsh
@@ -131,6 +149,7 @@ installNerdfonts() {
 # installTmux
 # installNeovim
 # installZoxide
+# installYazi
 # runRanger
 # runZsh
 
