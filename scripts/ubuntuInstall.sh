@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -x
 # Installation
 # sudo apt update
-# sudo apt upgrade
+# sudo apt -y upgrade
 
 programs=""
 
@@ -19,6 +19,7 @@ checkRust() {
   then
     echo "Rust not found"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
     rustup update
   fi
 }
@@ -35,26 +36,27 @@ runBasic() {
     echo "No programs to install"
   else
     echo "Install programs $programs"
-    sudo apt -y install $programs
+    sudo apt -y install $programs build-essential
   fi
 }
 
 installTmux() {
   # Install Tmux Plugin Manager
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  $HOME/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
 installNeovim() {
-  sudo add-apt-repository ppa:neovim-ppa/unstable
+  sudo add-apt-repository -y ppa:neovim-ppa/unstable
   sudo apt-get -y update
   sudo apt-get -y install neovim
 
   # Backup old config
-  mv ~/.config/nvim ~/.config/nvim.bak
-  mv ~/.local/share/nvim ~/.local/share/nvim.bak
+  # mv ~/.config/nvim ~/.config/nvim.bak
+  # mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
   # Install astrovim
-  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  # git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 }
 
 runRanger() {
@@ -128,20 +130,12 @@ runDotfiles() {
   /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no
 }
 
-runStow() {
-  # Dotfiles
-  rm -rf .zshrc
-  git https://github.com/RafaelB97/dotfiles.git $HOME/.dotfiles
-  cd $HOME/.dotfiles
-  stow --no-folding .
-  cd $HOME
-}
-
 installNerdfonts() {
   git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
   cd nerd-fonts
   git sparse-checkout add patched-fonts/FiraCode
   ./install.sh FiraCode
+  cd $HOME
 }
 
 # runBasic
