@@ -8,8 +8,7 @@ return {
   },
   config = function()
     -- Keybinds for neo-tree
-		vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
-		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+		vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Neotree toggle" })
 
     require("neo-tree").setup({
       event_handlers = {
@@ -28,7 +27,14 @@ return {
           hide_dotfiles = false,
           hide_gitignored = true,
         }
-      }
+      },
+      window = {
+        mappings = {
+          ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
+          ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
+          ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
+        },
+      },
     })
   end
 }
