@@ -16,3 +16,15 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
+vim.opt.list = true
+vim.opt.listchars:append({
+  -- eol = "¬",
+  tab = "->",
+  space = "·",
+  lead = "·",
+  trail = "·",
+  extends = ">",
+  precedes = "<",
+  nbsp = "·",
+})
+

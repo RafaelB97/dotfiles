@@ -12,6 +12,10 @@ return {
 		vim.keymap.set("n", "<leader>ge", ":Neotree toggle source=git_status<CR>", { desc = "Neotree Git Status toggle" })
 
     require("neo-tree").setup({
+      close_if_last_window = true,
+      source_selector = {
+        winbar = true,
+      },
       event_handlers = {
         {
           -- Auto close neo-tree when a file is open.
