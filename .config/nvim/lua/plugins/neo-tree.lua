@@ -9,6 +9,7 @@ return {
   config = function()
     -- Keybinds for neo-tree
 		vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Neotree toggle" })
+		vim.keymap.set("n", "<leader>ge", ":Neotree toggle source=git_status<CR>", { desc = "Neotree Git Status toggle" })
 
     require("neo-tree").setup({
       event_handlers = {
