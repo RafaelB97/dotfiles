@@ -10,8 +10,8 @@
     "editor.guides.bracketPairs" : true,
     "editor.guides.highlightActiveIndentation" : true,
     "editor.guides.bracketPairsHorizontal" : "active",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.tree.indent": 16,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.sideBar.location": "right",
@@ -86,6 +86,10 @@
         {
             "before": ["leader", "q"],
             "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["leader", "g", "e"],
+            "commands": ["workbench.view.scm"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -100,6 +104,12 @@
         {
             "before": ["<"],
             "commands": ["editor.action.outdentLines"]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
         }
     ],
 }
