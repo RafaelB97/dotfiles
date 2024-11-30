@@ -29,3 +29,6 @@ alias mux="tmuxinator"
 # Vim to NeoVim
 alias vim="nvim"
 
+alias astro="NVIM_APPNAME=nvim-astronvim nvim"
+
+alias ls="eza"

@@ -28,12 +28,11 @@ runBasic() {
   checkExist "curl"
   checkExist "git"
   checkExist "tmux"
-  checkExist "ranger"
-  checkExist "stow"
 
   if [ -z "$programs" ]
   then
     echo "No programs to install"
+    sudo apt -y install build-essential
   else
     echo "Install programs $programs"
     sudo apt -y install $programs build-essential
@@ -47,34 +46,32 @@ installTmux() {
 }
 
 installNeovim() {
-  sudo add-apt-repository -y ppa:neovim-ppa/unstable
-  sudo apt-get -y update
-  sudo apt-get -y install neovim
+  sudo apt -y install neovim
 
   # Backup old config
   # mv ~/.config/nvim ~/.config/nvim.bak
   # mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
   # Install astrovim
-  # git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-}
-
-runRanger() {
-  git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+  git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim-astronvim
 }
 
 installZoxide() {
   sudo apt -y install fzf
-  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 }
 
 installYazi() {
   # TODO: Check if zoxide is install
   sudo apt -y install fd-find ripgrep ffmpegthumbnailer unar jq
   checkRust
-  cargo install --locked yazi-fm
+  cargo install --locked yazi-fm yazi-cli
 }
 
+installEza() {
+  checkRust
+  cargo install eza
+}
 
 runZsh() {
   sudo apt -y install zsh
@@ -144,7 +141,7 @@ installNerdfonts() {
 # installNeovim
 # installZoxide
 # installYazi
-# runRanger
+# installEza
 # runZsh
 
 # installNerdfonts
