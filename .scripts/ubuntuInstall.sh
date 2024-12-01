@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
 # Installation
-# sudo apt update
-# sudo apt -y upgrade
+# sudo apt-get update
+# sudo apt-get -y upgrade
 
 programs=""
 
@@ -32,10 +32,10 @@ runBasic() {
   if [ -z "$programs" ]
   then
     echo "No programs to install"
-    sudo apt -y install build-essential
+    sudo apt-get -y install build-essential
   else
     echo "Install programs $programs"
-    sudo apt -y install $programs build-essential
+    sudo apt-get -y install $programs build-essential
   fi
 }
 
@@ -46,7 +46,7 @@ installTmux() {
 }
 
 installNeovim() {
-  sudo apt -y install neovim
+  sudo apt-get -y install neovim
 
   # Backup old config
   # mv ~/.config/nvim ~/.config/nvim.bak
@@ -57,13 +57,13 @@ installNeovim() {
 }
 
 installZoxide() {
-  sudo apt -y install fzf
+  sudo apt-get -y install fzf
   curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 }
 
 installYazi() {
   # TODO: Check if zoxide is install
-  sudo apt -y install fd-find ripgrep ffmpegthumbnailer unar jq
+  sudo apt-get -y install fd-find ripgrep ffmpegthumbnailer unar jq
   checkRust
   cargo install --locked yazi-fm yazi-cli
 }
@@ -74,7 +74,7 @@ installEza() {
 }
 
 runZsh() {
-  sudo apt -y install zsh
+  sudo apt-get -y install zsh
   ## oh-my-zsh
   chsh -s $(which zsh)
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
@@ -103,7 +103,7 @@ installKitty() {
 }
 
 installEmacs() {
-  sudo apt -y install ripgrep fd-find
+  sudo apt-get -y install ripgrep fd-find
   sudo add-apt-repository ppa:kelleyk/emacs
   sudo apt-get update
   sudo apt-get -y install emacs28
@@ -114,8 +114,8 @@ installEmacs() {
 installi3() {
   echo 'Run Desktop'
   # i3, nitrogen and rofi
-  # sudo apt -y install dconf-editor
-  sudo apt -y install i3 nitrogen rofi
+  # sudo apt-get -y install dconf-editor
+  sudo apt-get -y install i3 nitrogen rofi
 }
 
 runDotfiles() {
