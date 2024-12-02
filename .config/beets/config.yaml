@@ -1,0 +1,9 @@
+# directory: 
+# library: 
+
+plugins: fetchart embedart edit
+
+import:
+    move: yes
+    from_scratch: yes
+
