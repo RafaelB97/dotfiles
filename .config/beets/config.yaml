@@ -1,4 +1,4 @@
-plugins: fetchart embedart edit scrub lastgenre chroma web
+plugins: fetchart embedart edit scrub lastgenre chroma web mbsync info duplicates
 
 # directory:
 # library:
@@ -8,7 +8,14 @@ import:
     from_scratch: yes
     log: /config/beet.log
 
+match:
+    preferred:
+        media: ['Digital Media', 'CD']
+
 web:
     host: 0.0.0.0
     port: 8337
+
+embedart:
+    maxwidth: 600
 
