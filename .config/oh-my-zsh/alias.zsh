@@ -30,5 +30,6 @@ alias mux="tmuxinator"
 alias vim="nvim"
 
 alias astro="NVIM_APPNAME=nvim-astronvim nvim"
+alias lazy="NVIM_APPNAME=nvim-lazyvim nvim"
 
 alias ls="eza"
