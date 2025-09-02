@@ -14,6 +14,7 @@ checkExist() {
   fi
 }
 
+# TODO: Check the .zshenv file
 checkRust() {
   if ! command -v cargo
   then
@@ -39,6 +40,7 @@ runBasic() {
   fi
 }
 
+# TODO: Check sensible plugin
 installTmux() {
   # Install Tmux Plugin Manager
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -51,9 +53,6 @@ installNeovim() {
   # Backup old config
   # mv ~/.config/nvim ~/.config/nvim.bak
   # mv ~/.local/share/nvim ~/.local/share/nvim.bak
-
-  # Install astrovim
-  git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim-astronvim
 }
 
 installZoxide() {
@@ -63,9 +62,9 @@ installZoxide() {
 
 installYazi() {
   # TODO: Check if zoxide is install
-  sudo apt-get -y install fd-find ripgrep ffmpegthumbnailer unar jq
+  sudo apt-get -y install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf imagemagick
   checkRust
-  cargo install --locked yazi-fm yazi-cli
+  cargo install --force yazi-build
 }
 
 installEza() {
