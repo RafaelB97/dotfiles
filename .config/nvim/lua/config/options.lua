@@ -1,30 +1,36 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.cmd("let g:netrw_liststyle = 3")
 
-vim.opt.backspace = '2'
-vim.opt.showcmd = true
-vim.opt.laststatus = 2
--- vim.opt.autowrite = true
-vim.opt.cursorline = true
-vim.opt.autoread = true
+vim.opt.relativenumber = true
 vim.opt.number = true
-vim.wo.relativenumber = true
 
--- use spaces for tabs
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.shiftround = true
-vim.opt.expandtab = true
+-- tabs & indentation
+vim.opt.tabstop = 2 -- 2 spaces for tabs
+vim.opt.shiftwidth = 2 -- 2 spaces for indent width
+vim.opt.expandtab = true -- expand tab to spaces
+vim.opt.autoindent = true -- copy indent from current line starting new one
 
-vim.opt.list = true
-vim.opt.listchars:append({
-  -- eol = "¬",
-  tab = "->",
-  space = "·",
-  lead = "·",
-  trail = "·",
-  extends = ">",
-  precedes = "<",
-  nbsp = "·",
-})
+vim.opt.wrap = false
 
+-- search
+vim.opt.ignorecase = true -- ignore case when searching
+vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+
+vim.opt.cursorline = true
+
+-- turn on termguicolors for tokyonight colorscheme to work
+vim.opt.termguicolors = true
+vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+vim.opt.signcolumn = "yes" -- show sign column so that test doesnt't shift
+
+-- backspace
+vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- clipboard
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+-- split windows
+vim.opt.splitright = true -- split vertical window to the right
+vim.opt.splitbelow = true -- split horizontal window to the bottom
+
+-- turn off swapfile
+vim.opt.swapfile = false
