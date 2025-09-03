@@ -5,6 +5,7 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    bufdelete = {enabled = true },
     dashboard = { enabled = true },
     explorer = { 
       enabled = true,
@@ -56,5 +57,13 @@ return {
     { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
     { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
     { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+
+    -- Close buffer
+    { "<leader>c",
+      function ()
+        Snacks.bufdelete()
+      end,
+      desc = "Close buffer"
+    }
   }
 }

@@ -5,5 +5,9 @@ vim.keymap.set('i', 'jk', '<Esc>', {})
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", {})
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", {})
 
--- Close buffer
-vim.keymap.set("n", "<space>c", ":bd<CR>", { desc = "Close buffer" })
+-- Quit window
+vim.keymap.set("n", "<space>q", "<CMD>confirm q<CR>", { desc = "Close window" })
+vim.keymap.set("n", "<space>Q", "<CMD>confirm qa<CR>", { desc = "Close all windows" })
+
+-- Comments
+vim.keympa.set({"n", "x"}, "<space>/", "gcc", { desc = "Comment line" })
