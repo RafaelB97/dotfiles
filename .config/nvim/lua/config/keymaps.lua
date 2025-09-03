@@ -10,4 +10,4 @@ vim.keymap.set("n", "<space>q", "<CMD>confirm q<CR>", { desc = "Close window" })
 vim.keymap.set("n", "<space>Q", "<CMD>confirm qa<CR>", { desc = "Close all windows" })
 
 -- Comments
-vim.keympa.set({"n", "x"}, "<space>/", "gcc", { desc = "Comment line" })
+vim.keymap.set({"n", "x"}, "<space>/", "gcc", { desc = "Comment line" })

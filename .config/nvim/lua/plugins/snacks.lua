@@ -36,7 +36,7 @@ return {
     },
 
     -- Pickers
-    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Find files" },
+    { "<leader><space>", function() Snacks.picker.smart({ hidden = true }) end, desc = "Find files" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Find recent files" },
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
