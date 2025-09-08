@@ -8,6 +8,14 @@ return {
     spec = {
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
+      {
+        "<leader>w",
+        group = "Windows",
+        proxy = "<c-w>",
+        -- expand = function ()
+        --   return require('which-key.extras').expand.win()
+        -- end
+      },
     },
   },
   keys = {
